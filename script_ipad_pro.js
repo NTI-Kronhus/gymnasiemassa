@@ -42,7 +42,6 @@ $(document).ready(function(){
 		$("#"+program).show();
 		$("#"+program).animate({opacity:"1"},"slow");		
 		$(".choser").animate({opacity: "0"},"slow");
-		alert("ipad.js");
 		$(".NTI_logo").animate({width:"-=36vw",height:"-=8vw",marginLeft:"+=65vw",marginTop:"+=30vh"},"slow");
 	});
 	
