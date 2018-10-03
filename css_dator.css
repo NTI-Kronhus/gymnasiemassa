@@ -136,25 +136,25 @@ td{
 }
 
 .EK_vandring{
-	background-image:url('HA_vandring.svg');
+	background-image:url('EK_vandring.svg');
 	background-repeat:no-repeat;
 	background-position: left; 
 }
 
 .IT_vandring{
-	background-image:url('HA_vandring.svg');
+	background-image:url('IT_vandring.svg');
 	background-repeat:no-repeat;
 	background-position: left; 
 }
 
 .TE_vandring{
-	background-image:url('HA_vandring.svg');
+	background-image:url('TE_vandring.svg');
 	background-repeat:no-repeat;
 	background-position: left; 
 }
 
 .NA_vandring{
-	background-image:url('HA_vandring.svg');
+	background-image:url('NA_vandring.svg');
 	background-repeat:no-repeat;
 	background-position: left; 
 }
