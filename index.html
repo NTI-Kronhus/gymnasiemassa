@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="scss.css" />
+<link rel="stylesheet" href="css.css" />
+<title> NTI Gymnasiet Kronhus </title>
+<link rel="icon" href="favicon.png" type="image/png" size="16x16">
+<script>
+var program;
+
+function hide_all(){
+	$(".plan_TE").hide();
+	$(".plan_HA").hide();
+	$(".plan_NA").hide();
+	$(".plan_IT").hide();
+	$(".plan_EK").hide();
+	$(".dimmer").hide();
+	$(".program").hide();
+	$(".HA_schema").hide();
+	$(".TE_schema").hide();
+	$(".IT_schema").hide();
+	$(".NA_schema").hide();
+	$(".EK_schema").hide();
+}
+
+function create_schema(){
+	$("[data-time]").each(function(){
+		var time = $(this).data('time');
+		var after = $(this).data('after');
+		var before = $(this).data('before');
+		var height = time*8.2/60-0.1;
+		var margin_after = after*8.2/60;
+		var margin_before = before*8.2/60-0.1;
+		$(this).css("height",height+"vh");
+		$(this).css("line-height",(height)+"vh");
+		$(this).css("margin-bottom",margin_after+"vh");
+		$(this).css("margin-top",margin_before+"vh");
+	});
+}
+
+$(document).ready(function(){
+	hide_all();
+	create_schema();
+	
+	$(".choser").click(function(){
+		if($(".choser").css("opacity") != "1"){
+			return;
+		}
+		program = $(this).attr("class").substr(7,2);
+		$("#"+program).show();
+		$("#"+program).animate({opacity:"1"},"slow");		
+		$(".choser").animate({opacity: "0"},"slow");
+		$(".NTI_logo").animate({width:"-=36vw",height:"-=8vw",marginLeft:"+=65vw",marginTop:"+=30vh"},"slow");
+	});
+	
+	$(".NTI_logo").click(function(){
+		if($("#"+program).css("opacity") != "1"){
+			return;
+		}
+		$("#"+program).animate({opacity:"0"},"slow",function(){
+			$("#"+program).hide();
+		});
+		$(".choser").animate({opacity: "1"},"slow");	
+		$(".NTI_logo").animate({width:"+=36vw",height:"+=8vw",marginLeft:"-=65vw",marginTop:"-=30vh"},"slow");
+	});
+	
+	$(".plan_dbl").click(function(){
+		$(".plan_"+program).fadeOut();
+		$(".dimmer").fadeOut();
+	});
+	
+	$(".plan").click(function(){
+		if($("#"+program).css("opacity") != "1"){
+			return;
+		}
+		$(".plan_"+program).fadeIn();
+		$(".dimmer").fadeIn();
+	});
+	
+	$(".schedule").click(function(){
+		if($("#"+program).css("opacity") != "1"){
+			return;
+		}
+		$("."+program+"_schema").fadeIn();
+		$(".dimmer").fadeIn();
+	});
+	
+	
+	
+	
+	$(".dimmer").click(function(){
+		$("."+program+"_schema").fadeOut();
+		$(".dimmer").fadeOut();
+	});
+	
+	$(".schema").click(function(){
+		$("."+program+"_schema").fadeOut();
+		$(".dimmer").fadeOut();
+	});
+	
+	$(".interest").click(function(){
+		window.location.href = "https://www.ntigymnasiet.se/kronhus/intresseanmalan/";
+	});
+	
+});
+</script>
+</head>
+
+<body class="bg_layer_1">
+
+<div class="choser_container">
+	<div class="choser_flex">
+		<div class="choser IT_color"><h1> IT </h1></div>
+		<div class="choser HA_color"><h1> HA </h1></div>
+		<div class="choser EK_color"><h1> EK </h1></div>
+		<div class="choser NA_color"><h1> NA </h1></div>
+		<div class="choser TE_color"><h1> TE </h1></div>
+	</div>
+	<div class="choser_flex">
+		<div class="NTI_logo"> </div>
+	</div>
+</div>
+
+<div class="program IT_vandring" id="IT">
+	<div class="meny">
+		<div class="item schedule">Schema</div>
+		<div class="item plan">Poängplan</div>
+		<div class="item interest">Intresseanmälan</div>
+	</div>
+</div>
+
+<div class="program HA_vandring" id="HA">
+	<div class="meny">
+		<div class="item schedule">Schema</div>
+		<div class="item plan">Poängplan</div>
+		<div class="item interest">Intresseanmälan</div>
+	</div>
+</div>
+
+<div class="program EK_vandring" id="EK">
+	<div class="meny">
+		<div class="item schedule">Schema</div>
+		<div class="item plan">Poängplan</div>
+		<div class="item interest">Intresseanmälan</div>
+	</div>
+</div>
+
+<div class="program NA_vandring" id="NA">
+	<div class="meny">
+		<div class="item schedule">Schema</div>
+		<div class="item plan">Poängplan</div>
+		<div class="item interest">Intresseanmälan</div>
+	</div>
+</div>
+
+<div class="program TE_vandring" id="TE">
+	<div class="meny">
+		<div class="item schedule">Schema</div>
+		<div class="item plan">Poängplan</div>
+		<div class="item interest">Intresseanmälan</div>
+	</div>
+</div>
+
+<div class="plan_dbl plan_TE">
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiegemensamma kurser</td><td>1100</td></tr>
+				<tr><td>Engelska 5</td><td>100</td></tr>
+				<tr><td>Engelska 6</td><td>100</td></tr>
+				<tr><td>Historia 1a1</td><td>50</td></tr>
+				<tr><td>Idrott och hälsa 1</td><td>100</td></tr>
+				<tr><td>Matematik 1c</td><td>100</td></tr>
+				<tr><td>Matematik 2c</td><td>100</td></tr>
+				<tr><td>Matematik 3c</td><td>100</td></tr>
+				<tr><td>Religionskunskap 1</td><td>50</td></tr>
+				<tr><td>Samhällskunskap 1b</td><td>100</td></tr>
+				<tr><td>Svenska 1</td><td>100</td></tr>
+				<tr><td>Svenska 2</td><td>100</td></tr>
+				<tr><td>Svenska 3</td><td>100</td></tr>		
+			<tr class="category"><td>Programgemensamma kurser</td><td>400</td></tr>
+				<tr><td>Fysik 1a</td><td>150</td></tr>
+				<tr><td>Kemi 1</td><td>100</td></tr>
+				<tr><td>Teknik 1</td><td>150</td></tr>
+		</table>
+	</div>
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiearbete</td><td>100</td></tr>
+			<tr class="category"><td>Inriktningskurser</td><td>300</td></tr>
+				<tr><td>Dator- och nätverksteknik</td><td>100</td></tr>
+				<tr><td>Programmering 1</td><td>100</td></tr>
+				<tr><td>Webbutveckling 1</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: SOFTWARE</td><td>400</td></tr>
+				<tr><td>Programmering 2</td><td>100</td></tr>
+				<tr><td>Webbserverprogrammering 1</td><td>100</td></tr>
+				<tr><td>Tillämpad programmering</td><td>100</td></tr>
+				<tr><td>Webbutveckling 2</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: ENGINEERING</td><td>400</td></tr>
+				<tr><td>Matematik 4</td><td>100</td></tr>
+				<tr><td>Fysik 2</td><td>100</td></tr>
+				<tr><td>Programmering 2</td><td>100</td></tr>
+				<tr><td>Matematik specialisering</td><td>100</td></tr>
+		</table>
+	</div>
+</div>
+
+<div class="plan_dbl plan_NA">
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiegemensamma kurser</td><td>1150</td></tr>
+				<tr><td>Engelska 5</td><td>100</td></tr>
+				<tr><td>Engelska 6</td><td>100</td></tr>
+				<tr><td>Historia 1b</td><td>100</td></tr>
+				<tr><td>Idrott och hälsa 1</td><td>100</td></tr>
+				<tr><td>Matematik 1c</td><td>100</td></tr>
+				<tr><td>Matematik 2c</td><td>100</td></tr>
+				<tr><td>Matematik 3c</td><td>100</td></tr>
+				<tr><td>Religionskunskap 1</td><td>50</td></tr>
+				<tr><td>Samhällskunskap 1b</td><td>100</td></tr>
+				<tr><td>Svenska 1</td><td>100</td></tr>
+				<tr><td>Svenska 2</td><td>100</td></tr>
+				<tr><td>Svenska 3</td><td>100</td></tr>		
+			<tr class="category"><td>Programgemensamma kurser</td><td>450</td></tr>
+				<tr><td>Biologi 1</td><td>100</td></tr>
+				<tr><td>Fysik 1a</td><td>150</td></tr>
+				<tr><td>Kemi 1</td><td>100</td></tr>
+				<tr><td>Moderna språk</td><td>100</td></tr>
+		</table>
+	</div>
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiearbete</td><td>100</td></tr>
+			<tr class="category"><td>Inriktningskurser</td><td>400</td></tr>
+				<tr><td>Biologi 2</td><td>100</td></tr>
+				<tr><td>Fysik 2</td><td>100</td></tr>
+				<tr><td>Kemi 2</td><td>100</td></tr>
+				<tr><td>Matematik 4</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: BIOSCIENCE</td><td>200</td></tr>
+				<tr><td>Engelska 7</td><td>100</td></tr>
+				<tr><td>Matematik 5</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: BIOTECH</td><td>200</td></tr>
+				<tr><td>Bioteknik</td><td>100</td></tr>
+				<tr><td>Naturvetenskaplig spec. - laboration och forskning</td><td>100</td></tr>
+		</table>
+	</div>
+</div>
+
+<div class="plan_dbl plan_HA">
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiegemensamma kurser</td><td>600</td></tr>
+				<tr><td>Engelska 5</td><td>100</td></tr>
+				<tr><td>Historia 1a1</td><td>50</td></tr>
+				<tr><td>Idrott och hälsa 1</td><td>100</td></tr>
+				<tr><td>Matematik 1a</td><td>100</td></tr>
+				<tr><td>Naturkunskap 1a1</td><td>50</td></tr>
+				<tr><td>Religionskunskap 1</td><td>50</td></tr>
+				<tr><td>Samhällskunskap 1a1</td><td>50</td></tr>
+				<tr><td>Svenska 1</td><td>100</td></tr>
+			<tr class="category"><td>Programgemensamma kurser</td><td>400</td></tr>
+				<tr><td>Entreprenörskap</td><td>100</td></tr>
+				<tr><td>Servicekunskap</td><td>100</td></tr>
+				<tr><td>Branschkunskap inom handel och administration</td><td>100</td></tr>
+				<tr><td>Information och kommunikation 1</td><td>100</td></tr>
+			<tr class="category"><td>Inriktningskurser</td><td>500</td></tr>
+				<tr><td>Personlig försäljning 1</td><td>100</td></tr>
+				<tr><td>Affärsutveckling och ledarskap</td><td>100</td></tr>
+				<tr><td>Praktisk marknadsföring 1</td><td>100</td></tr>
+				<tr><td>Inköp 1</td><td>100</td></tr>
+				<tr><td>Näthandel 1</td><td>100</td></tr>
+		</table>
+	</div>
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiearbete</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: EVENT & MARKETING</td><td>700</td></tr>
+				<tr><td>Entreprenörskap och företagande</td><td>100</td></tr>
+				<tr><td>Evenemang</td><td>100</td></tr>
+				<tr><td>Grafisk kommunikation 1</td><td>100</td></tr>
+				<tr><td>Praktisk marknadsföring 2</td><td>100</td></tr>
+				<tr><td>Svenska 2</td><td>100</td></tr>
+				<tr><td>Utställardesign 1</td><td>100</td></tr>
+				<tr><td>Utställardesign 2</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: BUSINESS SCHOOL</td><td>700</td></tr>
+				<tr><td>Affärskommunikation</td><td>100</td></tr>
+				<tr><td>Engelska 6</td><td>100</td></tr>
+				<tr><td>Entreprenörskap och företagande</td><td>100</td></tr>
+				<tr><td>Matematik 2a</td><td>100</td></tr>
+				<tr><td>Praktisk marknadsföring 2</td><td>100</td></tr>
+				<tr><td>Redovisning 1</td><td>100</td></tr>
+				<tr><td>Svenska 2</td><td>100</td></tr>
+		</table>
+	</div>
+</div>
+
+<div class="plan_dbl plan_EK">
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiegemensamma kurser</td><td>1250</td></tr>
+				<tr><td>Engelska 5</td><td>100</td></tr>
+				<tr><td>Engelska 6</td><td>100</td></tr>
+				<tr><td>Historia 1b</td><td>100</td></tr>
+				<tr><td>Idrott och hälsa 1</td><td>100</td></tr>
+				<tr><td>Matematik 1b</td><td>100</td></tr>
+				<tr><td>Matematik 2b</td><td>100</td></tr>
+				<tr><td>Naturkunskap 1b</td><td>100</td></tr>
+				<tr><td>Religionskunskap 1</td><td>50</td></tr>
+				<tr><td>Samhällskunskap 1b</td><td>100</td></tr>
+				<tr><td>Samhällskunskap 2</td><td>100</td></tr>
+				<tr><td>Svenska 1</td><td>100</td></tr>
+				<tr><td>Svenska 2</td><td>100</td></tr>
+				<tr><td>Svenska 3</td><td>100</td></tr>		
+			
+		</table>
+	</div>
+	<div class="flex_column">
+		<table class="bg_white">
+		<tr class="category"><td>Programgemensamma kurser</td><td>350</td></tr>
+				<tr><td>Företagsekonomi  1</td><td>100</td></tr>
+				<tr><td>Moderna språk</td><td>100</td></tr>
+				<tr><td>Privatjuridik</td><td>100</td></tr>
+				<tr><td>Psykologi 1</td><td>50</td></tr>
+			<tr class="category"><td>Gymnasiearbete</td><td>100</td></tr>
+			<tr class="category"><td>Inriktningskurser</td><td>300</td></tr>
+				<tr><td>Entreprenörskap och företagande</td><td>100</td></tr>
+				<tr><td>Företagstekonomi 2</td><td>100</td></tr>
+				<tr><td>Matematik 3b</td><td>100</td></tr>
+			<tr class="category" ><td style="font-size:110%;">Fördjupning: BUSINESS & MARKETING</td><td>300</td></tr>
+				<tr><td>Ledarskap och organisation</td><td>100</td></tr>
+				<tr><td>Marknadsföring</td><td>100</td></tr>
+				<tr><td>Medier, samhälle och kommunikation 1</td><td>100</td></tr>
+		</table>
+	</div>
+</div>
+
+<div class="plan_dbl plan_IT">
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiegemensamma kurser</td><td>600</td></tr>
+				<tr><td>Engelska 5</td><td>100</td></tr>
+				<tr><td>Historia 1a1</td><td>50</td></tr>
+				<tr><td>Idrott och hälsa 1</td><td>100</td></tr>
+				<tr><td>Matematik 1a</td><td>100</td></tr>
+				<tr><td>Naturkunskap 1a1</td><td>50</td></tr>
+				<tr><td>Religionskunskap 1</td><td>50</td></tr>
+				<tr><td>Samhällskunskap 1a1</td><td>50</td></tr>
+				<tr><td>Svenska 1</td><td>100</td></tr>
+			<tr class="category"><td>Programgemensamma kurser</td><td>400</td></tr>
+				<tr><td>Datorteknik 1a</td><td>100</td></tr>
+				<tr><td>Elektromekanik</td><td>100</td></tr>
+				<tr><td>Energiteknik 1</td><td>100</td></tr>
+				<tr><td>Mekatronik 1</td><td>100</td></tr>
+			<tr class="category"><td>Inriktningskurser</td><td>400</td></tr>
+				<tr><td>Dator- och nätverksteknik</td><td>100</td></tr>
+				<tr><td>Elektronik och mikrodatorteknk</td><td>100</td></tr>
+				<tr><td>Kommunikationsnät 1</td><td>100</td></tr>
+				<tr><td>Nätverksteknik</td><td>100</td></tr>
+		</table>
+	</div>
+	<div class="flex_column">
+		<table class="bg_white">
+			<tr class="category"><td>Gymnasiearbete</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: INFRASTRUCTURE</td><td>800</td></tr>
+				<tr><td>Programmering 1</td><td>100</td></tr>
+				<tr><td>Tillämpad programmering</td><td>100</td></tr>
+				<tr><td>Datorsamordning och support</td><td>100</td></tr>
+				<tr><td>Nätverksteknologier</td><td>100</td></tr>
+				<tr><td>Nätverksadministration</td><td>100</td></tr>
+				<tr><td>Nätverkssäkerhet</td><td>100</td></tr>
+				<tr><td>Engelska 6</td><td>100</td></tr>
+				<tr><td>Administration av nätverk och serverutrustning</td><td>100</td></tr>
+			<tr class="category"><td>Fördjupning: BACK END</td><td>800</td></tr>
+				<tr><td>Programmering 1</td><td>100</td></tr>
+				<tr><td>Programmering 2</td><td>100</td></tr>
+				<tr><td>Tillämpad programmering</td><td>100</td></tr>
+				<tr><td>Webbutveckling 1</td><td>100</td></tr>
+				<tr><td>Webbutveckling 2</td><td>100</td></tr>
+				<tr><td>Webbutveckling 1</td><td>100</td></tr>
+				<tr><td>Webbutveckling 2</td><td>100</td></tr>
+				<tr><td>Engelska 6</td><td>100</td></tr>
+		</table>
+	</div>
+</div>
+
+<div class="HA_schema">
+<div class="schema">
+<div class="time time_left">
+
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+	<div class="day">
+		<h1 class="day_name">Måndag</h1>	
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVE/SVA</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>INF</p></div>
+		<div class="lesson lunch" data-before="5" data-time="15" data-after="20"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>FÖS</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Tisdag</h1>		
+		<div class="lesson" data-before="0" data-time="80" data-after="30"><p>ENT</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="30"><p>IDR</p></div>
+		<div class="lesson lunch" data-before="5" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="30" data-after="5"><p>KLF</p></div>
+		<div class="lesson" data-before="0" data-time="100" data-after="0"><p>ENG</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Onsdag</h1>
+		<div class="lesson lunch" data-before="165" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVA</p></div>
+		<div class="lesson" data-before="0" data-time="100" data-after="5"><p>NAK</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>ENT</p></div>
+
+	</div>
+	<div class="day">
+		<h1 class="day_name">Torsdag</h1>
+		<div class="lesson" data-before="0" data-time="120" data-after="5"><p>SVE</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>HAN</p></div>
+		<div class="lesson lunch" data-before="5" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="100" data-after="15"><p>ENG</p></div>
+		<div class="lesson" data-before="0" data-time="100" data-after="0"><p>MAT</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Fredag</h1>
+		<div class="lesson" data-before="15" data-time="100" data-after="5"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>INF</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="10"><p>HAN</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>FÖS</p></div>
+		
+	</div>
+<div class="time time_right">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+</div>
+</div>
+
+<div class="TE_schema">
+<div class="schema">
+<div class="time time_left">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+	<div class="day">
+		<h1 class="day_name">Måndag</h1>	
+		<div class="lesson" data-before="0" data-time="80" data-after="10"><p>SVA</p></div>
+		<div class="lesson" data-before="0" data-time="70" data-after="0"><p>MAT</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="10"><p>SAM</p></div>
+		<div class="lesson" data-before="0" data-time="75" data-after="0"><p>ENG</p></div>
+		
+		
+		
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Tisdag</h1>		
+		<div class="lesson" data-before="20" data-time="80" data-after="40"><p>IDR</p></div>
+		<div class="lesson" data-before="0" data-time="70" data-after="5"><p>TEK</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVE</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>SAM</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Onsdag</h1>
+		<div class="lesson" data-before="30" data-time="30" data-after="5"><p>KLF</p></div>
+		<div class="lesson" data-before="0" data-time="90" data-after="5"><p>MAT</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>SVE/SVA</p></div>
+
+	</div>
+	<div class="day">
+		<h1 class="day_name">Torsdag</h1>
+		<div class="lesson" data-before="65" data-time="85" data-after="10"><p>ENG</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="90" data-after="5"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="70" data-after="10"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>HIS</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Fredag</h1>
+		<div class="lesson" data-before="15" data-time="80" data-after="55"><p>HIS</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="15"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="90" data-after="5"><p>TEK</p></div>
+		<div class="lesson" data-before="0" data-time="90" data-after="0"><p>TEK</p></div>
+		
+	</div>
+<div class="time time_right">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+
+</div>
+</div>
+
+<div class="IT_schema">
+<div class="schema">
+<div class="time time_left">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+	<div class="day">
+		<h1 class="day_name">Måndag</h1>	
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVA/SVE</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>ENG</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="70" data-after="0"><p>DAO</p></div>
+	
+	</div>
+	<div class="day">
+		<h1 class="day_name">Tisdag</h1>		
+		<div class="lesson" data-before="110" data-time="80" data-after="30"><p>IDR</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="15"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>ELR</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>ELR</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Onsdag</h1>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>MEK</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>DAO</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVE/SVA</p></div>
+		<div class="lesson" data-before="0" data-time="30" data-after="10"><p>KLF</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>MEK</p></div>
+
+	</div>
+	<div class="day">
+		<h1 class="day_name">Torsdag</h1>
+		<div class="lesson" data-before="70" data-time="80" data-after="10"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>ENE</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>ENE</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Fredag</h1>
+		<div class="lesson" data-before="0" data-time="90" data-after="5"><p>DAO</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>DAO</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>ENG</p></div>
+		
+	</div>
+<div class="time time_right">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+
+</div>
+</div>
+
+<div class="NA_schema">
+<div class="schema">
+<div class="time time_left">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+	<div class="day">
+		<h1 class="day_name">Måndag</h1>	
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>MOD 3</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="30" data-after="10"><p>KLF</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="5"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>KEM</p></div>
+	
+	</div>
+	<div class="day">
+		<h1 class="day_name">Tisdag</h1>		
+		<div class="lesson" data-before="90" data-time="80" data-after="5"><p>BIO</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="30"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="30"><p>IDR</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="10"><p>ENG</p></div>
+		<div class="lesson" data-before="0" data-time="89" data-after="0"><p>MAT</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Onsdag</h1>
+		<div class="lesson" data-before="70" data-time="80" data-after="10"><p>SVE</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVA</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="10"><p>KEM</p></div>
+		<div class="lesson" data-before="0" data-time="149" data-after="0"><p>MOD 1</p></div>
+
+	</div>
+	<div class="day">
+		<h1 class="day_name">Torsdag</h1>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>BIO</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>ENG</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="30"><p>SVE</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>MOD 3</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Fredag</h1>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SAM</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="15"><p>SAM</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="15"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>MAT</p></div>
+		
+	</div>
+<div class="time time_right">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+
+</div>
+</div>
+
+<div class="EK_schema">
+<div class="schema">
+<div class="time time_left">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+	<div class="day">
+		<h1 class="day_name">Måndag</h1>	
+		<div class="lesson" data-before="0" data-time="80" data-after="10"><p>MOD 3</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="15"><p>HIS</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="20"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>JUR</p></div>
+	
+	</div>
+	<div class="day">
+		<h1 class="day_name">Tisdag</h1>		
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>ENG</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVE</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="45"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>IDR</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Onsdag</h1>
+		<div class="lesson" data-before="70" data-time="80" data-after="10"><p>SVE</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SVA</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="10"><p>KEM</p></div>
+		<div class="lesson" data-before="0" data-time="149" data-after="0"><p>MOD 1</p></div>
+
+	</div>
+	<div class="day">
+		<h1 class="day_name">Torsdag</h1>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>BIO</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>MAT</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>ENG</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="10"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="30"><p>SVE</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>MOD 3</p></div>
+		
+	</div>
+	<div class="day">
+		<h1 class="day_name">Fredag</h1>
+		<div class="lesson" data-before="0" data-time="80" data-after="5"><p>SAM</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="15"><p>SAM</p></div>
+		<div class="lesson lunch" data-before="0" data-time="15" data-after="15"><p>LUNCH</p></div>
+		<div class="lesson" data-before="0" data-time="80" data-after="0"><p>MAT</p></div>
+		
+	</div>
+<div class="time time_right">
+<p> 30 </p>
+<p> 09:00 </p>
+
+<p> 30 </p>
+<p> 10:00 </p>
+
+<p> 30 </p>
+<p> 11:00 </p>
+
+<p> 30 </p>
+<p> 12:00 </p>
+
+<p> 30 </p>
+<p> 13:00 </p>
+
+<p> 30 </p>
+<p> 14:00 </p>
+
+<p> 30 </p>
+<p> 15:00 </p>
+
+<p> 30 </p>
+<p> 16:00 </p>
+
+<p> 30 </p>
+</div>
+
+</div>
+</div>
+
+<div class="dimmer"></div>
+
+</body>
+</html>	

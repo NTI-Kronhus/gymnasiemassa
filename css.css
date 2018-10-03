@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'SoletoXB';
+    src: url('Soleto-XBold.ttf');
+}
+
+@font-face {
+    font-family: 'SoletoL';
+    src: url('SoletoLight.ttf');
+}
+
+html,body{
+	margin:0px;
+	background-color:black;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+
+.plan_dbl{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	display:flex;
+	justify-content:space-evenly;
+	opacity:1;
+}
+
+.bg_white{
+	background-color:white;
+}
+.plan_dbl  table tr:nth-child(odd){
+	background-color:#eeeeee;
+}
+
+.category td{
+	font-size:125%;
+	border-bottom:0.5vh solid black;
+	margin-bottom:1vh;
+	padding:4vh 1vh 0vh 1vh;
+	background-color:white;
+	font-weight:bold;
+	
+}
+td{
+	padding:0.2vh 0.2vh 0.2vh 1vh;
+	border-bottom:0.1vh solid black;
+}
+
+.plan_dbl table{
+	font-size:2.3vh;
+	opacity:1;
+	font-family:'SoletoL';
+	border-spacing:0px;
+	margin-top:0h;
+	height:95vh;
+	width:43vw;
+	line-height:2.3vh;
+}
+
+
+.plan_dbl{
+	z-index:5;
+}
+
+.dimmer{
+	top:0;
+	left:0;
+	height:100vh;
+	width:100vw;
+	background-color:#222222;
+	opacity:0.9;
+	position:absolute;
+	z-index:1;
+}
+
+.meny {
+	color:black;
+	font-family:'SoletoL';
+	position:absolute;
+	right:0;
+	top:5vh;
+}
+
+.flex_column{
+	justify-content:space-evenly;
+
+}
+
+.meny .item{
+	font-size:3vh;
+	height:6vh;
+	width:14vw;
+	line-height:6vh;
+	background-color:white;
+	margin-top:3vh;
+	text-align:center;
+}
+
+
+.meny .interest{
+	font-size:2.5vh;
+}
+
+.meny .item:first-child{
+	margin-top:0px;
+}
+
+.program{
+	position:absolute;
+	top:0;
+	opacity:0;
+	width:100%;
+	height:100%;
+	z-index:0;
+}
+
+.bg_layer_1{
+	background-image:url('layer_3.png');
+	background-size:80%;
+}
+
+.HA_vandring{
+	background-image:url('HA_vandring.svg');
+	background-repeat:no-repeat;
+	background-position: left; 
+	background-size: 85vw 100vh;
+	padding-left:2vw;
+	width:95vw;
+	background-origin: content-box;
+}
+
+
+.EK_vandring{
+	background-image:url('EK_vandring.svg');
+	background-repeat:no-repeat;
+	background-position: left; 
+	background-size:  90vw 100vh;
+	padding-left:5vw;
+	padding-top:5vh;
+	width:95vw;
+	height:95vh;
+	background-origin: content-box;
+
+}
+
+.IT_vandring{
+	background-image:url('IT_vandring.svg');
+	background-repeat:no-repeat;
+	background-position: left; 
+	background-size:  90vw 100vh;
+	padding-left:5vw;
+	padding-top:5vh;
+	width:95vw;
+	height:95vh;}
+
+.TE_vandring{
+	background-image:url('TE_vandring.svg');
+	background-repeat:no-repeat;
+	background-position: left; 
+	background-size: 90vw 100vh;
+	padding-left:5vw;
+		width:95vw;
+background-origin: content-box;
+	}
+
+.NA_vandring{
+	background-image:url('NA_vandring.svg');
+	background-repeat:no-repeat;
+	background-position: left; 
+	background-size: 90vw 100vh;
+	padding-left:5vw;
+	padding-top:5vh;
+	width:95vw;
+	height:95vh;
+	background-origin: content-box;}
+
+.bg_img{
+	position:absolute;
+}
+
+.NTI_logo{
+	background-image:url('NTI_logo.png');
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	background-position: center; 
+	width:63vw;
+	height:14vw;
+	margin-top:5vh;
+	z-index:1;
+}
+	
+.choser{
+	border-radius:100%;
+	text-align:center;
+	font-family: 'SoletoXB';
+	color:white;
+	width:14vw;
+	height:14vw;
+	margin-top:30vh;
+	max-width:40vh;
+	max-height:40vh;
+	
+}
+
+.choser h1{
+	margin:0px;
+	font-size: 5vw;
+	line-height:14vw;
+}
+
+.choser_container{
+	display:flex;
+	justify-content:space-evenly;
+	flex-direction:column;
+}
+
+.choser_flex{
+	display:flex;
+	justify-content:space-evenly;
+	flex-direction:row;
+}
+
+.EK_color{
+	background-color:#ffffff;
+	color:black;
+}
+
+.HA_color{
+	background-color:#0de1ec;
+}
+
+.IT_color{
+	background-color:#4b0082;
+}
+
+.TE_color{
+	background-color:#dd0890;
+}
+
+.NA_color{
+	background-color:#200c9c;
+}
