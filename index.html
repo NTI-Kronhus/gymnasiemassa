@@ -5,10 +5,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 function is_iPad(){
-     return navigator.platform.match(/Pad/i) && navigator.platform.match(/Pro/i);
+     return navigator.platform.match(/Pad/i);
 }
 if(is_iPad()){
-alert("hej piad pro");
+alert(navigator.platform);
 	document.write("<link rel='stylesheet' href='schema_css_ipad_pro.css' ><link rel='stylesheet' href='css_ipad_pro.css'><script src='script_ipad_pro.js'> <\/script>");
 }
 else{
