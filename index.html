@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="scss.css" />
-<link rel="stylesheet" href="css.css" />
+<script>
+function is_iPhone_or_iPad(){
+     return navigator.platform.match(/i(Phone|Pad))/i);
+}
+if(is_iPhone_or_iPad()){
+	alert("HEJ IPAD");
+}
+
+</script>
+<link rel="stylesheet" href="schema_css_ipad_pro.css" />
+<link rel="stylesheet" href="css_ipad_pro.css" />
 <title> NTI Gymnasiet Kronhus </title>
 <link rel="icon" href="favicon.png" type="image/png" size="16x16">
 <script>
