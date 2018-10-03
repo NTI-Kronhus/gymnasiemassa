@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<title> NTI Gymnasiet Kronhus </title>
-<link rel="icon" href="favicon.png" type="image/png" size="16x16">
-
-<link id="css" rel='stylesheet' href='schema_css_dator.css' />
-<link id="scss" rel='stylesheet' href='css_dator.css'/>
-<script id="script" src='script_dator.js'></script>
-
-</head>
-
-<body class="bg_layer_1">
 <script>
 function is_iPhone_or_iPad(){
      return navigator.platform.match(/i(Phone|Pad)/i);
 }
 if(is_iPhone_or_iPad()){
-alert("HEJ IPAD");
-	$("#css").href="css_ipad_pro.css";
-	$("#scss").href="schema_css_ipad_pro.css";
-	$("#script").href="script_ipad_pro.js";
+	alert("HEJ IPAD2");
+	document.write("<link rel='stylesheet' href='schema_css_ipad_pro.css' ><link rel='stylesheet' href='css_ipad_pro.css'><script src='script_ipad_pro.js'> <\/script>");
+}
+else{
+	document.write("<link rel='stylesheet' href='schema_css_dator.css' ><link rel='stylesheet' href='css_dator.css'><script src='script_dator.js'> <\/script>");
 }
 </script>
+<title> NTI Gymnasiet Kronhus </title>
+<link rel="icon" href="favicon.png" type="image/png" size="16x16">
+
+<link id="css" rel='stylesheet' href='schema_css_dator.css' /><link id="scss" rel='stylesheet' href='css_dator.css'/><script id="script" src='script_dator.js'></script>
+
+</head>
+
+<body class="bg_layer_1">
+
 <div class="choser_container">
 	<div class="choser_flex">
 		<div class="choser IT_color"><h1> IT </h1></div>
