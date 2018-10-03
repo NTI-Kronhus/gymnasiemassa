@@ -4,11 +4,10 @@
 <meta charset="UTF-8"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-function is_iPhone_or_iPad(){
-     return navigator.platform.match(/i(Phone|Pad)/i);
+function is_iPad(){
+     return navigator.platform.match(/Pad/i) && navigator.platform.match(/Pro/i);
 }
-if(is_iPhone_or_iPad()){
-	alert("HEJ IPAD2");
+if(is_iPad()){
 	document.write("<link rel='stylesheet' href='schema_css_ipad_pro.css' ><link rel='stylesheet' href='css_ipad_pro.css'><script src='script_ipad_pro.js'> <\/script>");
 }
 else{
