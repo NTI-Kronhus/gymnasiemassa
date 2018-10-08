@@ -88,7 +88,7 @@ $(document).ready(function(){
 	});
 	
 	$(".interest").click(function(){
-		window.location.href = "https://www.ntigymnasiet.se/kronhus/intresseanmalan/";
+		window.location.href = "http://gymnasievalet.ntigymnasiet.se/massa/";
 	});
 	
 });
