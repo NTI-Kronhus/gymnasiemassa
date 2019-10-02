@@ -156,7 +156,7 @@ td{
 	padding-top:5vh;
 	width:95vw;
 	height:95vh;
-	background-size:100%;
+	background-size:105%;
 
 	}
 
@@ -220,7 +220,7 @@ top:3%;
 
 
 .EKlogo:first-of-type{
-    margin-left:39%;
+    margin-left:51%;
 }
 
 .GE{
@@ -229,8 +229,8 @@ top:3%;
 
 .EKlogo{
     height:11.3%;
-        margin-left:1%;
-
+    margin-left:1%;
+    margin-top:1.5%;
 }
 
 
