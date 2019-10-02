@@ -178,6 +178,60 @@ background-origin: content-box;
 	height:95vh;
 	background-origin: content-box;}
 
+
+.LEFT{
+   right:4%;
+}
+
+
+.TElogo:first-of-type{
+    margin-left:38.5%;
+}
+
+.TElogo{
+    margin-top:0%;
+    height:11.25%;
+    margin-left:1%;
+}
+
+
+.ITlogo:first-of-type{
+    margin-left:40%;
+}
+
+.ITlogo{
+    height:11.6%;
+    margin-left:1%;
+}
+
+
+.HAlogo:first-of-type{
+    margin-left:54.5%;
+}
+
+.HAlogo{
+    height:11.5%;
+}
+
+
+.EKlogo:first-of-type{
+    margin-left:39%;
+}
+
+.GE{
+    border-radius:100%;
+}
+
+.EKlogo{
+    height:11.3%;
+        margin-left:1%;
+
+}
+
+
+
+
+
 .bg_img{
 	position:absolute;
 }
