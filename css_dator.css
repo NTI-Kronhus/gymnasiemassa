@@ -144,9 +144,10 @@ td{
 
 .IT_vandring{
 	background-image:url('IT_vandring.svg');
+	background-size:90%;
 	background-repeat:no-repeat;
 	background-position: left;
-	top:0;
+	top:5%;
 }
 
 .TE_vandring{
@@ -173,12 +174,11 @@ td{
 
 
 .ITlogo:first-of-type{
-    margin-left:36%;
+    margin-left:40%;
 }
 
 .ITlogo{
-    margin-top:3.6%;
-    height:10%;
+    height:11.6%;
     margin-left:1%;
 }
 
