@@ -156,7 +156,7 @@ td{
 	padding-top:5vh;
 	width:95vw;
 	height:95vh;
-	background-size:90%;
+	background-size:100%;
 
 	}
 
@@ -189,12 +189,12 @@ top:3%;
 
 
 .TElogo:first-of-type{
-    margin-left:48.5%;
+    margin-left:51%;
 }
 
 .TElogo{
-    margin-top:2%;
-    height:11.25%;
+    margin-top:1%;
+    height:11.2%;
     margin-left:1%;
 }
 
@@ -210,12 +210,12 @@ top:3%;
 
 
 .HAlogo:first-of-type{
-    margin-left:64.5%;
+    margin-left:68.5%;
 }
 
 .HAlogo{
-    margin-top:4%;
-    height:11.5%;
+    margin-top:3.8%;
+    height:10.5%;
 }
 
 
