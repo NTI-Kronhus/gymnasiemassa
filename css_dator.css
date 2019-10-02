@@ -117,7 +117,7 @@ td{
 
 .program{
 	position:absolute;
-	top:0;
+	top:5%;
 	opacity:0;
 	width:100%;
 	height:100%;
@@ -138,20 +138,74 @@ td{
 .EK_vandring{
 	background-image:url('EK_vandring.svg');
 	background-repeat:no-repeat;
-	background-position: left; 
+	background-position: left;
+	left:4%;
 }
 
 .IT_vandring{
 	background-image:url('IT_vandring.svg');
 	background-repeat:no-repeat;
-	background-position: left; 
+	background-position: left;
+	top:0;
 }
 
 .TE_vandring{
 	background-image:url('TE_vandring.svg');
 	background-repeat:no-repeat;
-	background-position: left; 
+	background-position: left;
+	left:4%;
 }
+
+.LEFT{
+   right:4%;
+}
+
+
+.TElogo:first-of-type{
+    margin-left:40%;
+}
+
+.TElogo{
+    margin-top:0%;
+    height:11.25%;
+    margin-left:1%;
+}
+
+
+.ITlogo:first-of-type{
+    margin-left:36%;
+}
+
+.ITlogo{
+    margin-top:3.6%;
+    height:10%;
+    margin-left:1%;
+}
+
+
+.HAlogo:first-of-type{
+    margin-left:56.5%;
+}
+
+.HAlogo{
+    height:11.5%;
+}
+
+
+.EKlogo:first-of-type{
+    margin-left:41%;
+}
+
+.GE{
+    border-radius:100%;
+}
+
+.EKlogo{
+    height:11.3%;
+        margin-left:1%;
+
+}
+
 
 .NA_vandring{
 	background-image:url('NA_vandring.svg');
