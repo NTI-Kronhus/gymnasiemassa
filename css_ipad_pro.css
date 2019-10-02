@@ -155,7 +155,10 @@ td{
 	padding-left:5vw;
 	padding-top:5vh;
 	width:95vw;
-	height:95vh;}
+	height:95vh;
+	background-size:80%;
+
+	}
 
 .TE_vandring{
 	background-image:url('TE_vandring.svg');
@@ -165,6 +168,7 @@ td{
 	padding-left:5vw;
 		width:95vw;
 background-origin: content-box;
+top:3%;
 	}
 
 .NA_vandring{
