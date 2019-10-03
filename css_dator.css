@@ -144,7 +144,7 @@ td{
 
 .IT_vandring{
 	background-image:url('IT_vandring.svg');
-	background-size:90%;
+	background-size:85%;
 	background-repeat:no-repeat;
 	background-position: left;
 	top:5%;
@@ -202,8 +202,7 @@ td{
 
 .EKlogo{
     height:11.3%;
-        margin-left:1%;
-
+    margin-left:1%;
 }
 
 
@@ -238,7 +237,6 @@ td{
 	margin-top:30vh;
 	max-width:40vh;
 	max-height:40vh;
-	
 }
 
 .choser h1{
