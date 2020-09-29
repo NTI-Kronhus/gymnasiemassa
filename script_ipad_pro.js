@@ -88,7 +88,11 @@ $(document).ready(function(){
 	});
 	
 	$(".interest").click(function(){
-		window.open('https://ui.ungpd.com/Surveys/33100740-3373-415c-8dbf-ec86f3d3f003', '_blank');
+		window.open('https://www.ntigymnasiet.se/kronhus/intresseanmalan/', '_blank');
 	});
 	
 });
+
+
+
+/*gammal länk till tidigare intresseanmälan: https://ui.ungpd.com/Surveys/33100740-3373-415c-8dbf-ec86f3d3f003*/
