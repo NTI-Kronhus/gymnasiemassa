@@ -147,7 +147,8 @@ td{
 	background-size:;
 	background-repeat:no-repeat;
 	background-position: left;
-	top:10%;
+	top:7,5%;
+	left:2%;
 }
 
 .TE_vandring{
@@ -155,6 +156,7 @@ td{
 	background-repeat:no-repeat;
 	background-position: left;
 	left:;
+	top:-3,5%;
 }
 .NA_vandring{
 	background-image:url('NA_vandring.svg');
