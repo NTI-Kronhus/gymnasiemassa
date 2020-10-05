@@ -144,17 +144,25 @@ td{
 
 .IT_vandring{
 	background-image:url('IT_vandring.svg');
-	background-size:80%;
+	background-size:;
 	background-repeat:no-repeat;
 	background-position: left;
-	top:5%;
+	top:;
 }
 
 .TE_vandring{
 	background-image:url('TE_vandring.svg');
 	background-repeat:no-repeat;
 	background-position: left;
-	left:4%;
+	left:;
+}
+.NA_vandring{
+	background-image:url('NA_vandring.svg');
+	background-repeat:no-repeat;
+	background-position: left;
+	background-size:; 
+	
+	
 }
 
 .LEFT{
@@ -206,11 +214,7 @@ td{
 }
 
 
-.NA_vandring{
-	background-image:url('NA_vandring.svg');
-	background-repeat:no-repeat;
-	background-position: left; 
-}
+
 
 .bg_img{
 	position:absolute;
